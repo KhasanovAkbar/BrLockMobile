@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/contentContainerColor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    style="@style/screenStyle">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#E7E4E4"
+        app:layout_constraintBottom_toTopOf="@id/search_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/settings">
+
+        <TextView
+            android:id="@+id/account_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/account_shape"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.paulrybitskyi.persistentsearchview.PersistentSearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingRight="4dp"
+        app:areSuggestionsDisabled="false"
+        app:cardBackgroundColor="@color/cardBackgroundColor"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:dividerColor="@color/dividerColor"
+        app:isClearInputButtonEnabled="true"
+        app:isDismissableOnTouchOutside="true"
+        app:isProgressBarEnabled="true"
+        app:isVoiceInputButtonEnabled="false"
+        app:layout_constraintBottom_toTopOf="@id/rv"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:progressBarColor="@color/colorAccent"
+        app:queryInputBarIconColor="@color/iconColor"
+        app:queryInputCursorColor="@color/colorAccent"
+        app:queryInputHintColor="@color/secondaryTextColor"
+        app:queryInputTextColor="@color/primaryTextColor"
+        app:shouldDimBehind="true"
+        app:suggestionIconColor="@color/suggestionIconColor"
+        app:suggestionRecentSearchIconColor="@color/suggestionIconColor"
+        app:suggestionSearchSuggestionIconColor="@color/suggestionIconColor"
+        app:suggestionSelectedTextColor="@color/suggestionSelectedTextColor" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="120dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="2dp"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="4dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        tools:listitem="@layout/item_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="#E7E4E4"
+        app:menu="@menu/settings">
+
+        <TextView
+            android:id="@+id/account_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/account_shape"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_view"
+        android:paddingStart="2dp"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:paddingRight="2dp"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_view" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_layout"
+        android:paddingStart="4dp"
+        android:paddingLeft="4dp"
+        android:background="@color/contentContainerColor"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingRight="4dp" />
+
+
+    <!--<com.paulrybitskyi.persistentsearchview.PersistentSearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_layout"
+        android:paddingStart="4dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingRight="4dp"
+        app:areSuggestionsDisabled="false"
+        app:cardBackgroundColor="@color/cardBackgroundColor"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:dividerColor="@color/dividerColor"
+        app:isClearInputButtonEnabled="true"
+        app:isDismissableOnTouchOutside="true"
+        app:isProgressBarEnabled="false"
+        app:isVoiceInputButtonEnabled="false"
+        app:progressBarColor="@color/colorAccent"
+        app:queryInputBarIconColor="@color/iconColor"
+        app:queryInputCursorColor="@color/colorAccent"
+        app:queryInputHintColor="@color/secondaryTextColor"
+        app:queryInputTextColor="@color/primaryTextColor"
+        app:shouldDimBehind="true"
+        app:suggestionIconColor="@color/suggestionIconColor"
+        app:suggestionRecentSearchIconColor="@color/suggestionIconColor"
+        app:suggestionSearchSuggestionIconColor="@color/suggestionIconColor"
+        app:suggestionSelectedTextColor="@color/suggestionSelectedTextColor"
+        app:suggestionTextColor="@color/suggestionTextColor" />-->
+
+</RelativeLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screenStyle">
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/edit"
+        android:textColor="#303B4F"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--   <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/image"
+           android:layout_width="96dp"
+           android:layout_height="96dp"
+           android:src="@drawable/ic_baseline_person_24"
+           app:civ_border_color="#166BFA"
+           app:civ_border_width="1dp"
+           app:layout_constraintBottom_toTopOf="@id/name"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/login" />
+
+       <ImageView
+           android:id="@+id/add_image"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_pluss"
+           app:layout_constraintBottom_toBottomOf="@id/image"
+           app:layout_constraintEnd_toEndOf="@id/image" />
+    -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:layout_constraintBottom_toTopOf="@id/surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login">
+
+        <!--  <EditText
+              android:id="@+id/name_et"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:autofillHints="name"
+              android:background="@null"
+              android:hint="@string/ism"
+              android:inputType="text"
+              android:padding="20dp"
+              android:singleLine="true"
+              android:textSize="16sp" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/white">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="first name"
+                android:background="@color/white"
+                android:backgroundTint="@null"
+                android:hint="@string/ism"
+                android:inputType="textPersonName"
+                android:padding="20dp"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:layout_constraintBottom_toTopOf="@id/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name">
+
+        <EditText
+            android:id="@+id/surname_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints="surname"
+            android:background="@null"
+            android:hint="@string/familiya"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:singleLine="true"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:layout_constraintBottom_toTopOf="@id/car_plate_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/surname">
+
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/phone_number_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="@string/_998123456789"
+            android:inputType="phone"
+            android:padding="20dp"
+            android:textSize="16sp"
+            android:typeface="normal"
+            mask:allowed_chars="1234567890"
+            mask:mask="+998(##)###-##-##" />
+
+        <!-- <EditText
+             android:id="@+id/phone_number_et"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:autofillHints="phone"
+             android:background="@null"
+             android:hint="@string/telefon_raqam"
+             android:inputType="phone"
+             android:padding="20dp"
+             android:singleLine="true"
+             android:textSize="16sp" />-->
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/car_plate_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:layout_constraintBottom_toTopOf="@id/edit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_number">
+
+        <EditText
+            android:id="@+id/car_number_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints="car plate number"
+            android:background="@null"
+            android:hint="@string/car_plate_number"
+            android:inputType="textCapCharacters"
+            android:padding="20dp"
+            android:singleLine="true"
+            android:textSize="16sp"
+            tools:ignore="TextFields" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    <androidx.cardview.widget.CardView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
+            app:layout_constraintBottom_toTopOf="@id/register_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/car_plate_number">
+
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="password"
+                android:background="@null"
+                android:hint="@string/parol"
+                android:inputType="textVisiblePassword"
+                android:padding="20dp"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#166BFA"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@id/log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_plate_number">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#166BFA"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_btn">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
